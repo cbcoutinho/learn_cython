@@ -5,7 +5,7 @@ from numpy cimport ndarray as ar
 #     void c_gfunc(double* x, int* n, int* m, double* a, double* b, double* c)
 
 cdef extern:
-  void c_gfunc(double* x, int* n, int* m, double* a, double* b, double* c);
+  void c_gfunc(double* x, int* n, int* m, double* a, double* b, double* c)
 
 def f(double x, double a=-10.0, double b=10.0, int n=100):
     cdef:

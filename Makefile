@@ -1,14 +1,14 @@
 
 P  = python
 FC = gfortran
-FLAGS = -O3 -fPIC
+FLAGS = -O3 -fPIC -Wall
 
 all:
 	$(MAKE) test
 
-test: clean build
+test: build
 	python test.py
-	$(MAKE) clean
+	# $(MAKE) clean
 
 build: setup.py pygfunc.o gfunc.o
 	$(P) $< build_ext --inplace

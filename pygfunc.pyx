@@ -1,9 +1,6 @@
 from numpy import linspace, empty
 from numpy cimport ndarray as ar
 
-# cdef extern from "pygfunc.h":
-#     void c_gfunc(double* x, int* n, int* m, double* a, double* b, double* c)
-
 cdef extern:
   void c_gfunc(double* x, int* n, int* m, double* a, double* b, double* c)
 

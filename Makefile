@@ -1,5 +1,5 @@
 
-P  = python
+PY = python
 FC = gfortran
 FLAGS = -O3 -fPIC -Wall
 
@@ -8,9 +8,10 @@ all:
 
 test: build
 	python test.py
+	$(MAKE) clean
 
 build: setup.py pygfunc.o gfunc.o
-	$(P) $< build_ext --inplace
+	$(PY) $< build_ext --inplace
 
 gfunc.o: gfunc.f90
 	$(FC) -c $< -o $@ $(FLAGS)
